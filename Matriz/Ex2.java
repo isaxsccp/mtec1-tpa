@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Ex2 {
     public static void main(String[] args) {
-        int v[][] = new int[3][4];
+        int v[][] = new int[3][3];
 
         int maior = -100;
         int menor = 100;
