@@ -1,32 +1,47 @@
 import java.util.Random;
-public class javoscripto {
-	public static void main(String[] args) {
-		   int v[][] = new int [3][3];
-		       int i, j;
-		       int maior=0;
-		       int menor=0;
-		       Random in = new Random();
-		           for (i=0; i<3; i++){
-		              for (j=0; j<3; j++) {
-		               v[i][j] = in.nextInt()%50;
-		              }
-		           }
-		       for (i=0; i<3; i++){
-		           System.out.println();
-		           for (j=0; j<3; j++){
-		               System.out.print("[ "+v[i][j]+" ]");
-		               if (v[i][j]>maior) {
-		            	   maior = v[i][j];
-		           }
-		              if (v[i][j]<menor)
-		            	  menor = v[i][j];
-	      
-		       }
-		           
-		   }  
-		      System.out.println(" ");
-		      System.out.println(" ");
-		      System.out.println("o numero maior é: " +maior);
-		      System.out.println("o numero menor é: " +menor);
-		}
+
+public class Ex2 {
+    public static void main(String[] args) {
+        int v[][] = new int[3][4];
+
+        int maior = -100;
+        int menor = 100;
+        int linhaMA = 0, colunaMA = 0;
+        int linhaME = 0, colunaME = 0;
+
+        Random in = new Random();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                v[i][j] = in.nextInt() % 10;
+            }
+        }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println();
+            for (int j = 0; j < 3; j++) {
+                System.out.print("[ " + v[i][j] + "] ");
+            }
+        }
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (v[i][j] > maior) {
+                    maior = v[i][j];
+                    linhaMA = i + 1;
+                    colunaMA = j + 1;
+                }
+                if (v[i][j] < menor) {
+                    menor = v[i][j];
+                    linhaME = i + 1;
+                    colunaME = j + 1;
+                }
+            }
+        }
+
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("O número maior é: " + maior + " localizado na linha " + linhaMA + " e na coluna " + colunaMA);
+        System.out.println("O número menor é: " + menor + " localizado na linha " + linhaME + " e na coluna " + colunaME);
+    }
 }
