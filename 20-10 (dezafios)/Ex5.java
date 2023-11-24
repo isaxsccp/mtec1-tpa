@@ -1,59 +1,24 @@
-import java.util.Scanner; 
-
 public class Ex5 { 
     public static void main(String[] args) { 
-        Scanner scanner = new Scanner(System.in); 
 
-        int[] vetorA = new int[10]; 
-        int[] vetorB = new int[10]; 
-        int[] vetorC = new int[10]; 
+        int[] vetorA = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}; 
+        int[] vetorB = new int[vetorA.length]; 
 
-        // Preencher vetor A com valores fornecidos pelo usuário 
-
-        System.out.println("Digite os valores para o vetor A:"); 
-
-        for (int i = 0; i < 10; i++) { 
-            System.out.print("Valor " + (i + 1) + ": "); 
-            vetorA[i] = scanner.nextInt(); 
+        System.out.println("Vetor A:"); 
+        for (int i = 0; i < 15; i++) { 
+            System.out.print(vetorA[i] + " "); 
         } 
 
-        // Preencher vetor B com valores fornecidos pelo usuário 
-        System.out.println("Digite os valores para o vetor B:"); 
+        System.out.println(); 
+        System.out.println("Vetor B (fatoriais):"); 
 
-        for (int i = 0; i < 10; i++) { 
-            System.out.print("Valor " + (i + 1) + ": "); 
-            vetorB[i] = scanner.nextInt(); 
-        } 
-
-        int tamanhoC = 0; 
-
-        // Encontrar a interseção dos vetores A e B 
-
-        for (int elementoA : vetorA) { 
-            for (int elementoB : vetorB) { 
-
-                if (elementoA == elementoB) { 
-                    vetorC[tamanhoC++] = elementoA; 
-                    break; // Avança para o próximo elemento em A 
-
-                } 
+        for (int i = 0; i < 15; i++) { 
+            int fatorial = 1; 
+            for (int j = 1; j <= vetorA[i]; j++) { 
+                fatorial *= j; 
             } 
+            vetorB[i] = fatorial; 
+            System.out.print(fatorial + " "); 
         } 
-
- 
-
-        // Exibir vetor C (interseção) 
-
-        System.out.println("Vetor C (Interseção de A e B):"); 
-
-        for (int i = 0; i < tamanhoC; i++) { 
-
-            System.out.print(vetorC[i] + " "); 
-
-        } 
-
- 
-
+        System.out.println(); 
     } 
-
-} 
