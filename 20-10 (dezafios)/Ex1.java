@@ -12,7 +12,7 @@ public class Ex1 {
            System.out.print("Nuemro " + (i + 1) + ": ");
            A[i] = scanner.nextInt();
        }
-       for (int i = 0; i < tamanho; i++) {
+       for (int i = 0; i < TAM; i++) {
            if (A[i] % 2 == 0) {
                B[par] = A[i];
                par++;
@@ -22,7 +22,7 @@ public class Ex1 {
            }
        }
        System.out.print("Vetor B (pares e ímpares): ");
-       for (int i = 0; i < tamanho; i++) {
+       for (int i = 0; i < TAM; i++) {
            System.out.print(B[i] + " ");
        }
    }
